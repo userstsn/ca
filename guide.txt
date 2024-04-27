@@ -1,0 +1,10 @@
+ghdl -s notgate.vhdl
+ghdl -s notgate_tb.vhdl
+ghdl -a notgate.vhdl
+ghdl -a notgate_tb.vhdl
+ghdl -e notgate_tb
+ghdl -r notgate_tb --vcd=notgate.vcd
+gtkwave notgate.vcd
+
+
+GHDL is used as the general purpose VHDL simulator an GTKWave is used to visualize the waveforms.
