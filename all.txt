@@ -241,6 +241,51 @@ architecture test of nandgate_tb is
 	end process;
 end test;
 
+
+####################### xorGate ##########################
+
+library ieee; use
+ieee.std_logic_1164.all;
+entity xorGate is
+port(
+a,b : in std_logic;
+
+c: out std_logic
+);
+end xorGate;
+architecture behaviour of xorGate is
+begin
+c<= a XOR b;
+
+
+
+######################## xorGate_tb #######################
+
+component;
+signal a,b,c : std_logic;
+begin
+nandGate_inst: nandGate port map
+( a => a, b => b, c => c);
+process begin a
+<= '0'; b <=
+'0'; wait for
+1 ns;
+a <= '0'; b
+<= '1'; wait
+for 1 ns;
+a <= '1';
+b <= '0';
+wait for 1
+ns; a <= '1';
+
+b <= '1';
+wait for 1
+ns;
+assert false report "successfully completed";
+wait;
+end process;
+end test;
+
 #################################### ha  #############################
 library ieee;
 use ieee.std_logic_1164.all;
