@@ -253,15 +253,25 @@ a,b : in std_logic;
 c: out std_logic
 );
 end xorGate;
-architecture behaviour of xorGate is
+architecture behaviour of xoGate is
 begin
 c<= a XOR b;
 
+end behaviour;
 
 
-######################## xorGate_tb #######################
-
-component;
+################################ xorGate_tb#########################3
+library ieee; use
+ieee.std_logic_1164.all;
+entity xorGate_tb is
+end xorGate_tb;
+architecture test of xorGate_tb is
+component xorGate
+port(
+a,b : in std_logic;
+c : out std_logic
+);
+end component;
 signal a,b,c : std_logic;
 begin
 nandGate_inst: nandGate port map
@@ -285,26 +295,6 @@ assert false report "successfully completed";
 wait;
 end process;
 end test;
-
-#################################### ha  #############################
-library ieee;
-use ieee.std_logic_1164.all;
-entity ha is
-	port
-	   (
-		a: in std_ulogic;
-		b: in std_ulogic;
-		s: out std_ulogic;
-		c: out std_ulogic
-	    );
-	end ha;
-
-architecture behave of ha is 
-begin
-	s <= a xor b;
-	c <= a and b;
-end behave;
-
 #################################### ha_tb #############################
 
 library ieee;
