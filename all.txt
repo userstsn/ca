@@ -1,4 +1,4 @@
----------------------------------------orgate--------------------------
+######################## orgate ####################################
 library ieee;
 use ieee.std_logic_1164.all;
 
@@ -16,7 +16,7 @@ architecture behavior of orgate is
 
 end behavior;
 
-------------------------------------------orgate_tb ----------------------------
+##################--orgate_tb #######################
 library ieee;
 use ieee.std_logic_1164.all;
 
